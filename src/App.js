@@ -1,10 +1,10 @@
 import './App.css';
-import axios from 'axios';
 import { useState } from 'react';
+import { find } from './helpers';
 
 function App() {
   const [ticker, setTicker] = useState('');
-  const [portfolio, setPortfolio] = useState([]);
+  // const [portfolio, setPortfolio] = useState([]);
 
   return (
     <div>
@@ -13,7 +13,7 @@ function App() {
         placeholder='Symbol'
         onChange={e => setTicker(e.target.value)}
       />
-      <button onClick={find}>Find</button>
+      <button onClick={() => find(ticker)}>Find</button>
     </div>
   );
 }

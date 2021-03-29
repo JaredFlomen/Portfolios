@@ -1,13 +1,15 @@
-const options = {
-  method: 'GET',
-  url: 'https://alpha-vantage.p.rapidapi.com/query',
-  params: { function: 'GLOBAL_QUOTE', symbol: `${ticker}` },
-  headers: {
-    'x-rapidapi-key': process.env.ALPHA_KEY,
-    'x-rapidapi-host': 'alpha-vantage.p.rapidapi.com',
-  },
-};
-const find = () => {
+import axios from 'axios';
+const find = ticker => {
+  const options = {
+    method: 'GET',
+    url: 'https://alpha-vantage.p.rapidapi.com/query',
+    params: { function: 'GLOBAL_QUOTE', symbol: `${ticker}` },
+    headers: {
+      'x-rapidapi-key': `${process.env.REACT_APP_ALPHA_KEY}`,
+      'x-rapidapi-host': 'alpha-vantage.p.rapidapi.com',
+    },
+  };
+
   axios
     .request(options)
     .then(function (response) {
@@ -17,3 +19,5 @@ const find = () => {
       console.error(error.message);
     });
 };
+
+export { find };
