@@ -16,7 +16,13 @@ function App() {
       <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
         Find
       </button>
-      {price && <p>Price: {price}</p>}
+      {price ? (
+        <p>
+          {ticker} Price: {price}
+        </p>
+      ) : (
+        <p>Enter A Stock</p>
+      )}
     </div>
   );
 }

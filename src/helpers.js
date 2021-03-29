@@ -1,4 +1,6 @@
 import axios from 'axios';
+
+//Finds the last closing price given a stock symbol
 const findPrice = async ticker => {
   const options = {
     method: 'GET',
