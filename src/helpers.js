@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const find = ticker => {
   const options = {
     method: 'GET',
@@ -12,12 +13,10 @@ const find = ticker => {
 
   axios
     .request(options)
-    .then(function (response) {
-      console.log(response.data['Global Quote']['08. previous close']);
-    })
-    .catch(function (error) {
-      console.error(error.message);
-    });
+    .then(response =>
+      console.log(response.data['Global Quote']['08. previous close'])
+    )
+    .catch(error => console.error(error.message));
 };
 
 export { find };
