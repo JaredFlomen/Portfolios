@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const find = ticker => {
+const findPrice = async ticker => {
   const options = {
     method: 'GET',
     url: 'https://alpha-vantage.p.rapidapi.com/query',
@@ -11,12 +10,13 @@ const find = ticker => {
     },
   };
 
-  axios
-    .request(options)
-    .then(response =>
-      console.log(response.data['Global Quote']['08. previous close'])
-    )
-    .catch(error => console.error(error.message));
+  try {
+    const response = await axios.request(options);
+    console.log(response.data['Global Quote']['08. previous close']);
+    return response.data['Global Quote']['08. previous close'];
+  } catch (error) {
+    return console.error(error.message);
+  }
 };
 
-export { find };
+export default findPrice;
