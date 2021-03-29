@@ -6,8 +6,7 @@ function App() {
   const [ticker, setTicker] = useState('');
   const [price, setPrice] = useState('');
   const [portfolio, setPortfolio] = useState([{ ticker: 'AAPL', price: 100 }]);
-  const updatePortfolio = (ticker, price) => {
-    console.log('Worked', ticker, price);
+  const updatePortfolio = () => {
     setPortfolio([...portfolio, { ticker, price }]);
   };
   return (
@@ -20,9 +19,7 @@ function App() {
       <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
         Find
       </button>
-      <button onClick={() => updatePortfolio(ticker, price)}>
-        Update Portfolio
-      </button>
+      <button onClick={() => updatePortfolio()}>Update Portfolio</button>
       {price ? (
         <p>
           {ticker} Price: {price}
