@@ -28,7 +28,7 @@ function App() {
         onChange={e => setTicker(e.target.value)}
       />
       <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
-        Find
+        Find The Latest Price
       </button>
       <button onClick={() => updatePortfolio()}>Update Portfolio</button>
       {price ? (
