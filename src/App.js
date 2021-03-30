@@ -30,6 +30,7 @@ function App() {
   useEffect(() => {
     console.log('Market value changed');
   }, [marketValue]);
+
   return (
     <div>
       <input
