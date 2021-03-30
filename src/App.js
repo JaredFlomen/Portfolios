@@ -5,14 +5,14 @@ function App() {
   const [ticker, setTicker] = useState('');
   const [price, setPrice] = useState('');
   const [portfolio, setPortfolio] = useState([
-    { ticker: 'AAPL', price: 100 },
-    { ticker: 'TSLA', price: 200 },
+    { ticker: 'AAPL', price: 100, shares: 1 },
+    { ticker: 'TSLA', price: 600, shares: 1 },
   ]);
   const updatePortfolio = e => {
     e.preventDefault();
     const newPortfolio = portfolio.map(item => {
       if (item.ticker === ticker) {
-        return { ticker, price };
+        return { ...item, ticker, price: parseInt(price) };
       } else {
         return item;
       }
@@ -21,6 +21,11 @@ function App() {
     setTicker('');
     setPrice('');
   };
+
+  const marketValue = portfolio.reduce(
+    (accumulator, position) => accumulator + position.price * position.shares,
+    0
+  );
   return (
     <div>
       <input
@@ -40,15 +45,19 @@ function App() {
       ) : (
         <p>Enter A Stock</p>
       )}
-      {portfolio &&
-        portfolio.map((item, index) => {
-          return (
-            <div key={index}>
-              <p>{item.ticker}</p>
-              <p>{item.price}</p>
-            </div>
-          );
-        })}
+      <div>{marketValue}</div>
+      <div>
+        {portfolio &&
+          portfolio.map((item, index) => {
+            return (
+              <div key={index}>
+                <p>{item.ticker}</p>
+                <p>{item.price}</p>
+                <p>{item.shares}</p>
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 }
