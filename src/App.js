@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Position from './components/Position';
 import findPrice from './helpers';
 
 function App() {
@@ -55,11 +56,11 @@ function App() {
         {portfolio &&
           portfolio.map((item, index) => {
             return (
-              <div key={index}>
-                <p>{item.ticker}</p>
-                <p>{item.price}</p>
-                <p>{item.shares}</p>
-              </div>
+              <Position
+                ticker={item.ticker}
+                price={item.price}
+                shares={item.shares}
+              />
             );
           })}
       </div>
