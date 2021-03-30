@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import findPrice from './helpers';
 
 function App() {
@@ -26,6 +26,10 @@ function App() {
     (accumulator, position) => accumulator + position.price * position.shares,
     0
   );
+
+  useEffect(() => {
+    console.log('Market value changed');
+  }, [marketValue]);
   return (
     <div>
       <input
