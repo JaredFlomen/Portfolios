@@ -4,9 +4,21 @@ import findPrice from './helpers';
 function App() {
   const [ticker, setTicker] = useState('');
   const [price, setPrice] = useState('');
-  const [portfolio, setPortfolio] = useState([{ ticker: 'AAPL', price: 100 }]);
+  const [portfolio, setPortfolio] = useState([
+    { ticker: 'AAPL', price: 100 },
+    { ticker: 'TSLA', price: 200 },
+  ]);
   const updatePortfolio = () => {
-    setPortfolio([...portfolio, { ticker, price }]);
+    const newPortfolio = portfolio.map(item => {
+      if (item.ticker === ticker) {
+        return { ticker, price };
+      } else {
+        return item;
+      }
+    });
+    setPortfolio(newPortfolio);
+    setTicker('');
+    setPrice('');
   };
   return (
     <div>
@@ -27,9 +39,9 @@ function App() {
         <p>Enter A Stock</p>
       )}
       {portfolio &&
-        portfolio.map(item => {
+        portfolio.map((item, index) => {
           return (
-            <div>
+            <div key={index}>
               <p>{item.ticker}</p>
               <p>{item.price}</p>
             </div>
