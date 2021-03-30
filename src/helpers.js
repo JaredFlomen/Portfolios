@@ -14,7 +14,7 @@ const findPrice = async ticker => {
 
   try {
     const response = await axios.request(options);
-    console.log(response.data['Global Quote']['08. previous close']);
+    // console.log(response.data['Global Quote']['08. previous close']);
     return response.data['Global Quote']['08. previous close'];
   } catch (error) {
     return console.error(error.message);
