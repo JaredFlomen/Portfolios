@@ -51,7 +51,7 @@ function App() {
       ) : (
         <p>Enter A Stock</p>
       )}
-      <div>{marketValue}</div>
+      <div>Market value: {marketValue}</div>
       <div>
         {portfolio &&
           portfolio.map((item, index) => {
