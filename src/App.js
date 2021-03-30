@@ -8,7 +8,8 @@ function App() {
     { ticker: 'AAPL', price: 100 },
     { ticker: 'TSLA', price: 200 },
   ]);
-  const updatePortfolio = () => {
+  const updatePortfolio = e => {
+    e.preventDefault();
     const newPortfolio = portfolio.map(item => {
       if (item.ticker === ticker) {
         return { ticker, price };
@@ -25,12 +26,13 @@ function App() {
       <input
         type='text'
         placeholder='Symbol'
+        value={price}
         onChange={e => setTicker(e.target.value)}
       />
       <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
         Find The Latest Price
       </button>
-      <button onClick={() => updatePortfolio()}>Update Portfolio</button>
+      <button onClick={updatePortfolio}>Update Portfolio</button>
       {price ? (
         <p>
           {ticker} Price: {price}
