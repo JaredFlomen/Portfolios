@@ -26,7 +26,6 @@ function App() {
       <input
         type='text'
         placeholder='Symbol'
-        value={price}
         onChange={e => setTicker(e.target.value)}
       />
       <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
