@@ -6,14 +6,15 @@ function App() {
   const [ticker, setTicker] = useState('');
   const [price, setPrice] = useState('');
   const [portfolio, setPortfolio] = useState([
-    { ticker: 'AAPL', price: 100, shares: 1 },
-    { ticker: 'TSLA', price: 600, shares: 1 },
+    { ticker: 'AAPL', price: 100.12, shares: 1 },
+    { ticker: 'TSLA', price: 600.34, shares: 1 },
   ]);
-  const updatePortfolio = e => {
+  const updatePortfolio = async e => {
     e.preventDefault();
+    const newPrice = await findPrice(ticker);
     const newPortfolio = portfolio.map(item => {
       if (item.ticker === ticker) {
-        return { ...item, ticker, price: parseInt(price) };
+        return { ...item, ticker, price: parseFloat(newPrice).toFixed(2) };
       } else {
         return item;
       }
@@ -28,9 +29,9 @@ function App() {
     0
   );
 
-  useEffect(() => {
-    console.log('Market value changed');
-  }, [marketValue]);
+  // useEffect(() => {
+  //   console.log('Market value changed');
+  // }, [marketValue]);
 
   return (
     <div>
@@ -40,9 +41,9 @@ function App() {
         value={ticker}
         onChange={e => setTicker(e.target.value)}
       />
-      <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
+      {/* <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
         Find The Latest Price
-      </button>
+      </button> */}
       <button onClick={updatePortfolio}>Update Portfolio</button>
       {price ? (
         <p>
