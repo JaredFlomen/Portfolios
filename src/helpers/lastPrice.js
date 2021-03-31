@@ -17,7 +17,7 @@ const lastPrice = async ticker => {
     const price = response.data['Global Quote']['08. previous close'];
     return parseFloat(price).toFixed(2);
   } catch (error) {
-    return console.error(error.message);
+    return error.message;
   }
 };
 

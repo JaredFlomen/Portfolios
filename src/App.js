@@ -20,7 +20,12 @@ function App() {
 
   async function addPosition() {
     const price = await lastPrice(ticker);
+    if (!price) {
+      setTicker('');
+      return null;
+    }
     setPortfolio([...portfolio, { ticker, price, shares: 1 }]);
+    setTicker('');
   }
 
   const marketValue = portfolio.reduce(
