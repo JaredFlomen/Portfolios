@@ -40,17 +40,16 @@ function App() {
       <button onClick={updatePortfolio}>Update All Positions</button>
       <div>Market value: {parseFloat(marketValue).toFixed(2)}</div>
       <div>
-        {portfolio &&
-          portfolio.map((item, index) => {
-            return (
-              <Position
-                key={index}
-                ticker={item.ticker}
-                price={item.price}
-                shares={item.shares}
-              />
-            );
-          })}
+        {portfolio.map((item, index) => {
+          return (
+            <Position
+              key={index}
+              ticker={item.ticker}
+              price={item.price}
+              shares={item.shares}
+            />
+          );
+        })}
       </div>
     </div>
   );
