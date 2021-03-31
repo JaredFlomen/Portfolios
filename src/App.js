@@ -44,7 +44,7 @@ function App() {
       {/* <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
         Find The Latest Price
       </button> */}
-      <button onClick={updatePortfolio}>Rebalance</button>
+      <button onClick={updatePortfolio}>Update A Position</button>
       <div>Market value: {marketValue}</div>
       <div>
         {portfolio &&
