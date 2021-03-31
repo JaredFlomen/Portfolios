@@ -4,7 +4,7 @@ import findPrice from './helpers';
 
 function App() {
   const [ticker, setTicker] = useState('');
-  const [price, setPrice] = useState('');
+  // const [price, setPrice] = useState('');
   const [portfolio, setPortfolio] = useState([
     { ticker: 'AAPL', price: 100.12, shares: 1 },
     { ticker: 'TSLA', price: 600.34, shares: 1 },
@@ -21,7 +21,7 @@ function App() {
     });
     setPortfolio(newPortfolio);
     setTicker('');
-    setPrice('');
+    // setPrice('');
   };
 
   const marketValue = portfolio.reduce(
@@ -44,7 +44,7 @@ function App() {
       {/* <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
         Find The Latest Price
       </button> */}
-      <button onClick={updatePortfolio}>Update Portfolio</button>
+      <button onClick={updatePortfolio}>Rebalance</button>
       <div>Market value: {marketValue}</div>
       <div>
         {portfolio &&
