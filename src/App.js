@@ -10,7 +10,7 @@ function App() {
     { ticker: 'TSLA', price: 600.34, shares: 1 },
     { ticker: 'SHOP', price: 1000, shares: 1 },
   ]);
-  const updatePortfolio = async => {
+  const updatePortfolio = () => {
     // e.preventDefault();
     // const newPrice = await findPrice(ticker);
     // const newPortfolio = portfolio.map(item => {
@@ -51,7 +51,7 @@ function App() {
       {/* <button onClick={() => findPrice(ticker).then(res => setPrice(res))}>
         Find The Latest Price
       </button> */}
-      <button onClick={updatePortfolio}>Update A Position</button>
+      <button onClick={updatePortfolio}>Update All Positions</button>
       <div>Market value: {marketValue}</div>
       <div>
         {portfolio &&
