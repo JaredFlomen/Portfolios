@@ -57,6 +57,7 @@ function App() {
           portfolio.map((item, index) => {
             return (
               <Position
+                key={index}
                 ticker={item.ticker}
                 price={item.price}
                 shares={item.shares}
