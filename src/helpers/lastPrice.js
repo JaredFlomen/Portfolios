@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //Finds the last closing price given a stock symbol
-const findPrice = async ticker => {
+const lastPrice = async ticker => {
   const options = {
     method: 'GET',
     url: 'https://alpha-vantage.p.rapidapi.com/query',
@@ -14,11 +14,11 @@ const findPrice = async ticker => {
 
   try {
     const response = await axios.request(options);
-    // console.log(response.data['Global Quote']['08. previous close']);
-    return response.data['Global Quote']['08. previous close'];
+    const price = response.data['Global Quote']['08. previous close'];
+    return parseFloat(price).toFixed(2);
   } catch (error) {
     return console.error(error.message);
   }
 };
 
-export default findPrice;
+export default lastPrice;

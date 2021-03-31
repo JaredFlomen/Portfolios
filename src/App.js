@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Position from './components/Position';
-import findPrice from './helpers';
+import lastPrice from './helpers/lastPrice';
 
 function App() {
   const [ticker, setTicker] = useState('');
@@ -12,18 +12,15 @@ function App() {
   const updatePortfolio = () => {
     Promise.all(
       portfolio.map(async position => {
-        const newPrice = await findPrice(position.ticker);
-        return { ...position, price: parseFloat(newPrice).toFixed(2) };
+        const price = await lastPrice(position.ticker);
+        return { ...position, price };
       })
     ).then(res => setPortfolio(res));
   };
 
   async function addPosition() {
-    const price = await findPrice(ticker);
-    setPortfolio([
-      ...portfolio,
-      { ticker, price: parseFloat(price).toFixed(2), shares: 1 },
-    ]);
+    const price = await lastPrice(ticker);
+    setPortfolio([...portfolio, { ticker, price, shares: 1 }]);
   }
 
   const marketValue = portfolio.reduce(
