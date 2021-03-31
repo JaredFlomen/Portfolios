@@ -45,13 +45,6 @@ function App() {
         Find The Latest Price
       </button> */}
       <button onClick={updatePortfolio}>Update Portfolio</button>
-      {price ? (
-        <p>
-          {ticker} Price: {price}
-        </p>
-      ) : (
-        <p>Enter A Stock</p>
-      )}
       <div>Market value: {marketValue}</div>
       <div>
         {portfolio &&
