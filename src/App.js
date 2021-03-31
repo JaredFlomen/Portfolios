@@ -11,9 +11,9 @@ function App() {
   ]);
   const updatePortfolio = () => {
     Promise.all(
-      portfolio.map(async i => {
-        const newPrice = await findPrice(i.ticker);
-        return { ...i, price: parseFloat(newPrice).toFixed(2) };
+      portfolio.map(async position => {
+        const newPrice = await findPrice(position.ticker);
+        return { ...position, price: parseFloat(newPrice).toFixed(2) };
       })
     ).then(res => setPortfolio(res));
   };
@@ -32,7 +32,7 @@ function App() {
         onChange={e => setTicker(e.target.value)}
       />
       <button onClick={updatePortfolio}>Update All Positions</button>
-      <div>Market value: {marketValue}</div>
+      <div>Market value: {parseFloat(marketValue).toFixed(2)}</div>
       <div>
         {portfolio &&
           portfolio.map((item, index) => {
