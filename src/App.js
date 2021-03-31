@@ -8,20 +8,27 @@ function App() {
   const [portfolio, setPortfolio] = useState([
     { ticker: 'AAPL', price: 100.12, shares: 1 },
     { ticker: 'TSLA', price: 600.34, shares: 1 },
+    { ticker: 'SHOP', price: 1000, shares: 1 },
   ]);
-  const updatePortfolio = async e => {
-    e.preventDefault();
-    const newPrice = await findPrice(ticker);
-    const newPortfolio = portfolio.map(item => {
-      if (item.ticker === ticker) {
-        return { ...item, ticker, price: parseFloat(newPrice).toFixed(2) };
-      } else {
-        return item;
-      }
-    });
-    setPortfolio(newPortfolio);
-    setTicker('');
+  const updatePortfolio = async => {
+    // e.preventDefault();
+    // const newPrice = await findPrice(ticker);
+    // const newPortfolio = portfolio.map(item => {
+    //   if (item.ticker === ticker) {
+    //     return { ...item, ticker, price: parseFloat(newPrice).toFixed(2) };
+    //   } else {
+    //     return item;
+    //   }
+    // });
+    // setPortfolio(newPortfolio);
+    // setTicker('');
     // setPrice('');
+    Promise.all(
+      portfolio.map(async i => {
+        const newPrice = await findPrice(i.ticker);
+        return { ...i, price: parseFloat(newPrice).toFixed(2) };
+      })
+    ).then(res => setPortfolio(res));
   };
 
   const marketValue = portfolio.reduce(
