@@ -18,6 +18,14 @@ function App() {
     ).then(res => setPortfolio(res));
   };
 
+  async function addPosition() {
+    const price = await findPrice(ticker);
+    setPortfolio([
+      ...portfolio,
+      { ticker, price: parseFloat(price).toFixed(2), shares: 1 },
+    ]);
+  }
+
   const marketValue = portfolio.reduce(
     (accumulator, position) => accumulator + position.price * position.shares,
     0
@@ -31,6 +39,7 @@ function App() {
         value={ticker}
         onChange={e => setTicker(e.target.value)}
       />
+      <button onClick={addPosition}>Add Position</button>
       <button onClick={updatePortfolio}>Update All Positions</button>
       <div>Market value: {parseFloat(marketValue).toFixed(2)}</div>
       <div>
