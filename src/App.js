@@ -23,9 +23,10 @@ function App() {
     if (!price) {
       setTicker('');
       return null;
+    } else {
+      setPortfolio([...portfolio, { ticker, price, shares: 1 }]);
+      setTicker('');
     }
-    setPortfolio([...portfolio, { ticker, price, shares: 1 }]);
-    setTicker('');
   }
 
   const marketValue = portfolio.reduce(
