@@ -5,7 +5,7 @@ import lastPrice from './helpers/lastPrice';
 
 function App() {
   const [ticker, setTicker] = useState('');
-  const [weight, setWeight] = useState(0);
+  const [weight, setWeight] = useState('');
   const [portfolio, setPortfolio] = useState([
     { ticker: 'AAPL', price: 100.12, weight: 10, shares: 1 },
     { ticker: 'TSLA', price: 600.34, weight: 5, shares: 2 },
@@ -15,7 +15,7 @@ function App() {
     Promise.all(
       portfolio.map(async position => {
         const price = await lastPrice(position.ticker);
-        if (!price) return 'API error';
+        if (!price) return { ...position, price: 'API Error' };
         return { ...position, price };
       })
     ).then(res => setPortfolio(res));
@@ -27,8 +27,9 @@ function App() {
       setTicker('');
       return null;
     } else {
-      setPortfolio([...portfolio, { ticker, price, weight }]);
+      setPortfolio([...portfolio, { ticker, price, weight, shares: 1 }]);
       setTicker('');
+      setWeight('');
     }
   }
 
