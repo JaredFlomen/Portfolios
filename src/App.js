@@ -54,7 +54,6 @@ function App() {
       />
       <button onClick={addPosition}>Add Position</button>
       <button onClick={updatePortfolio}>Update All Positions</button>
-      <div>Market value: {parseFloat(marketValue).toFixed(2)}</div>
       <div>
         <Header />
         {portfolio.map((item, index) => {
@@ -69,6 +68,7 @@ function App() {
           );
         })}
       </div>
+      <div>Market value: {parseFloat(marketValue).toFixed(2)}</div>
     </div>
   );
 }
