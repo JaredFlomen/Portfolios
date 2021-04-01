@@ -22,9 +22,11 @@ function App() {
   };
 
   async function addPosition() {
+    if (!ticker || !weight) return null;
     const price = await lastPrice(ticker);
     if (!price) {
       setTicker('');
+      setWeight('');
       return null;
     } else {
       setPortfolio([...portfolio, { ticker, price, weight, shares: 1 }]);
