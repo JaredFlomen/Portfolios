@@ -41,7 +41,10 @@ function App() {
       setWeight('');
       return null;
     } else {
-      setPortfolio([...portfolio, { ticker, price, weight, shares: 1 }]);
+      setPortfolio([
+        ...portfolio,
+        { ticker, price, weight: parseInt(weight), shares: 1 },
+      ]);
       setTicker('');
       setWeight('');
     }
