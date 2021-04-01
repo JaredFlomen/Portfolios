@@ -13,6 +13,7 @@ function App() {
     Promise.all(
       portfolio.map(async position => {
         const price = await lastPrice(position.ticker);
+        if (!price) return 'API error';
         return { ...position, price };
       })
     ).then(res => setPortfolio(res));
