@@ -60,7 +60,7 @@ function App() {
           return <Position key={index} item={item} />;
         })}
       </div>
-      <div>Market value: {parseFloat(marketValue).toFixed(2)}</div>
+      <div>Market value: ${parseFloat(marketValue).toFixed(2)}</div>
     </div>
   );
 }
