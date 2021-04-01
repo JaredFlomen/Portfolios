@@ -9,12 +9,7 @@ function Position({ item }) {
       <p>{price}</p>
       <p>{weight}%</p>
       <p>
-        {' '}
-        {shares && (
-          <p>
-            {shares} share{shares > 1 ? 's' : ''}
-          </p>
-        )}
+        {shares} share{shares > 1 ? 's' : ''}
       </p>
     </div>
   );
