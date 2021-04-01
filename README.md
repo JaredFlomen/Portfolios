@@ -1,3 +1,7 @@
+# Summary
+
+Portfolios is a passion project of mine - it's a new way for investors to benefit from the advancements in robo-advisors while still having control of where the funds are allocated. I wrote more about it on my blog [here](https://jaredflomen.ca/2021/03/28/presenting-portfolios/).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
