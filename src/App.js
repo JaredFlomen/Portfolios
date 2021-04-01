@@ -11,6 +11,7 @@ function App() {
     { ticker: 'TSLA', price: 600.34, weight: 5, shares: 2 },
     { ticker: 'SHOP', price: 1000, weight: 20, shares: 1 },
   ]);
+
   const updatePortfolio = () => {
     Promise.all(
       portfolio.map(async position => {
