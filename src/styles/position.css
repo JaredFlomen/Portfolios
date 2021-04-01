@@ -1,5 +1,11 @@
-.position {
+.wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+}
+
+.position {
+  width: 100%;
+  text-align: center;
 }

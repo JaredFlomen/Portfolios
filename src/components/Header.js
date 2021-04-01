@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header() {
   return (
-    <div className='position'>
+    <div className='wrapper'>
       <p>Ticker</p>
       <p>Price</p>
       <p>Weight</p>
