@@ -17,6 +17,11 @@ function App() {
     0
   );
 
+  const allocated = portfolio.reduce(
+    (accumulator, position) => accumulator + position.weight,
+    0
+  );
+
   const updatePortfolio = () => {
     Promise.all(
       portfolio.map(async position => {
@@ -65,6 +70,7 @@ function App() {
         })}
       </div>
       <div>Market value: ${parseFloat(marketValue).toFixed(2)}</div>
+      <div>Percent Allocated: {allocated}%</div>
     </div>
   );
 }
