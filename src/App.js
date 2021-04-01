@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Header from './components/Header';
 import Position from './components/Position';
 import lastPrice from './helpers/lastPrice';
 
@@ -54,6 +55,7 @@ function App() {
       <button onClick={updatePortfolio}>Update All Positions</button>
       <div>Market value: {parseFloat(marketValue).toFixed(2)}</div>
       <div>
+        <Header />
         {portfolio.map((item, index) => {
           return (
             <Position
