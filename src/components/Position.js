@@ -1,14 +1,14 @@
 import React from 'react';
 import '../styles/position.css';
 
-function Position({ ticker, price, shares, weight }) {
+function Position({ item }) {
   return (
     <div className='position'>
-      <p>{ticker}</p>
-      <p>{price}</p>
-      <p>{weight}%</p>
+      <p>{item.ticker}</p>
+      <p>{item.price}</p>
+      <p>{item.weight}%</p>
       <p>
-        {shares} share{shares > 1 ? 's' : ''}
+        {item.shares} share{item.shares > 1 ? 's' : ''}
       </p>
     </div>
   );

@@ -57,15 +57,7 @@ function App() {
       <div>
         <Header />
         {portfolio.map((item, index) => {
-          return (
-            <Position
-              key={index}
-              ticker={item.ticker}
-              price={item.price}
-              weight={item.weight}
-              shares={item.shares}
-            />
-          );
+          return <Position key={index} item={item} />;
         })}
       </div>
       <div>Market value: {parseFloat(marketValue).toFixed(2)}</div>
