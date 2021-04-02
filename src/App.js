@@ -2,10 +2,10 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Position from './components/Position';
 import lastPrice from './helpers/lastPrice';
-import useVisualMode from './helpers/useVisualMode';
+// import useVisualMode from './helpers/useVisualMode';
 
-const SHOW = 'SHOW';
-const EDIT = 'EDIT';
+// const SHOW = 'SHOW';
+// const EDIT = 'EDIT';
 
 function App() {
   const [ticker, setTicker] = useState('');
@@ -54,7 +54,7 @@ function App() {
     }
   }
 
-  const { mode, transition, back } = useVisualMode(portfolio ? SHOW : EDIT);
+  // const { mode, transition, back } = useVisualMode(portfolio ? SHOW : EDIT);
 
   return (
     <div>
