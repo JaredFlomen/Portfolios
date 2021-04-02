@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Position from './components/Position';
 import lastPrice from './helpers/lastPrice';
+import Button from 'react-bootstrap/Button';
 // import useVisualMode from './helpers/useVisualMode';
 
 // const SHOW = 'SHOW';
@@ -73,7 +74,9 @@ function App() {
       <button disabled={allocated >= 100 ? true : false} onClick={addPosition}>
         {allocated >= 100 ? 'Fully Allocated' : 'Add A Position'}
       </button>
-      <button onClick={updatePortfolio}>Update All Positions</button>
+      <Button onClick={updatePortfolio} variant='primary'>
+        Update All Positions
+      </Button>
       <div>
         <Header />
         {portfolio.map((item, index) => {
