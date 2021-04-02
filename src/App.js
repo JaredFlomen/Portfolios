@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import Header from './components/Header';
-import Position from './components/Position';
+// import Header from './components/Header';
+// import Position from './components/Position';
 import lastPrice from './helpers/lastPrice';
 import Button from 'react-bootstrap/Button';
+import Portfolio from './components/Portfolio';
 // import useVisualMode from './helpers/useVisualMode';
 
 // const SHOW = 'SHOW';
@@ -55,6 +56,10 @@ function App() {
     }
   }
 
+  // const positions = portfolio.map((item, index) => {
+  //   return <Position key={index} item={item} />;
+  // });
+
   // const { mode, transition, back } = useVisualMode(portfolio ? SHOW : EDIT);
 
   return (
@@ -82,10 +87,9 @@ function App() {
         Update All Positions
       </Button>
       <div>
-        <Header />
-        {portfolio.map((item, index) => {
-          return <Position key={index} item={item} />;
-        })}
+        {/* <Header /> */}
+        {/* {positions} */}
+        <Portfolio portfolio={portfolio} />
       </div>
       <div>Market value: ${parseFloat(marketValue).toFixed(2)}</div>
       <div>Percent Allocated: {allocated}%</div>
