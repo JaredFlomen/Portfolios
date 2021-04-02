@@ -1,13 +1,18 @@
 import React from 'react';
+import { Table } from 'react-bootstrap';
 
 function Header() {
   return (
-    <div className='wrapper'>
-      <p>Ticker</p>
-      <p>Price</p>
-      <p>Weight</p>
-      <p>Shares</p>
-    </div>
+    <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Price</th>
+          <th>Weight</th>
+          <th>Shares</th>
+        </tr>
+      </thead>
+    </Table>
   );
 }
 
