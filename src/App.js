@@ -34,7 +34,7 @@ function App() {
         const price = await lastPrice(position.ticker);
         const shares = (marketValue * position.weight) / 100 / price;
         if (!price) return { ...position, price: 'API Error' };
-        return { ...position, price, shares };
+        return { ...position, price, shares: shares.toFixed(2) };
       })
     ).then(res => setPortfolio(res));
   };
