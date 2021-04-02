@@ -71,9 +71,13 @@ function App() {
         value={weight}
         onChange={e => setWeight(e.target.value)}
       />
-      <button disabled={allocated >= 100 ? true : false} onClick={addPosition}>
+      <Button
+        disabled={allocated >= 100 ? true : false}
+        onClick={addPosition}
+        variant={allocated >= 100 ? 'secondary' : 'primary'}
+      >
         {allocated >= 100 ? 'Fully Allocated' : 'Add A Position'}
-      </button>
+      </Button>
       <Button onClick={updatePortfolio} variant='primary'>
         Update All Positions
       </Button>
