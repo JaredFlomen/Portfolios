@@ -13,19 +13,19 @@ function App() {
   const [ticker, setTicker] = useState('');
   const [weight, setWeight] = useState('');
   const [portfolio, setPortfolio] = useState([
-    { ticker: 'AAPL', price: 100.122, weight: 50, shares: 10 },
-    { ticker: 'TSLA', price: 600.34, weight: 30, shares: 1 },
-    { ticker: 'SHOP', price: 1000.12, weight: 10, shares: 0.5 },
+    { ticker: 'AAPL', price: 112.15, weight: 50, shares: 4.09 },
+    { ticker: 'TSLA', price: 600.34, weight: 30, shares: 0.45 },
+    { ticker: 'SHOP', price: 1000.12, weight: 10, shares: 0.09 },
   ]);
 
-  const testMarketValue = portfolio.reduce(
+  const marketValue = portfolio.reduce(
     (accumulator, position) => accumulator + position.price * position.shares,
     0
   );
 
-  console.log({ testMarketValue });
+  console.log({ marketValue });
 
-  const marketValue = 1000;
+  // const marketValue = 1000;
 
   const allocated = portfolio.reduce(
     (accumulator, position) => accumulator + position.weight,
