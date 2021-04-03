@@ -100,6 +100,7 @@ function App() {
       </div>
       <div>Market value: ${parseFloat(marketValue).toFixed(2)}</div>
       <div>Percent Allocated: {allocated}%</div>
+      <div>% Remaining: {100 - allocated}%</div>
     </div>
   );
 }
