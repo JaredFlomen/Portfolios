@@ -33,6 +33,8 @@ function App() {
       portfolio.map(async position => {
         const price = await lastPrice(position.ticker);
         const shares = (marketValue * position.weight) / 100 / price;
+        // console.log({ price });
+        // console.log({ shares });
         if (!price) return { ...position, price: 'API Error' };
         return { ...position, price, shares: shares.toFixed(2) };
       })

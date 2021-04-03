@@ -14,9 +14,9 @@ function Portfolio({ portfolio }) {
         </tr>
       </thead>
       <tbody>
-        {portfolio.map(position => {
+        {portfolio.map((position, index) => {
           return (
-            <tr>
+            <tr key={index}>
               <td>{position.ticker}</td>
               <td>{position.price}</td>
               <td>{position.weight}%</td>
