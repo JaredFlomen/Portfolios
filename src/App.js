@@ -18,12 +18,12 @@ function App() {
     { ticker: 'SHOP', price: 1000.12, weight: 10, shares: 0.5 },
   ]);
 
-  // const testMarketValue = portfolio.reduce(
-  //   (accumulator, position) => accumulator + position.price * position.shares,
-  //   0
-  // );
+  const testMarketValue = portfolio.reduce(
+    (accumulator, position) => accumulator + position.price * position.shares,
+    0
+  );
 
-  // console.log({ testMarketValue });
+  console.log({ testMarketValue });
 
   const marketValue = 1000;
 
