@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import lastPrice from './helpers/lastPrice';
 import Button from 'react-bootstrap/Button';
 import Portfolio from './components/Portfolio';
+import { Col, Form, Row } from 'react-bootstrap';
 // import useVisualMode from './helpers/useVisualMode';
 
 // const SHOW = 'SHOW';
@@ -23,7 +24,7 @@ function App() {
     0
   );
 
-  console.log({ marketValue });
+  // console.log({ marketValue });
 
   // const marketValue = 1000;
 
@@ -71,18 +72,26 @@ function App() {
 
   return (
     <div>
-      <input
-        type='text'
-        placeholder='Symbol'
-        value={ticker}
-        onChange={e => setTicker(e.target.value)}
-      />
-      <input
-        type='number'
-        placeholder='Portfolio Weight'
-        value={weight}
-        onChange={e => setWeight(e.target.value)}
-      />
+      <Form.Group>
+        <Row>
+          <Col>
+            <Form.Control
+              type='text'
+              placeholder='Symbol'
+              value={ticker}
+              onChange={e => setTicker(e.target.value)}
+            />
+          </Col>
+          <Col>
+            <Form.Control
+              type='number'
+              placeholder='Portfolio Weight'
+              value={weight}
+              onChange={e => setWeight(e.target.value)}
+            />
+          </Col>
+        </Row>
+      </Form.Group>
       <Button
         disabled={allocated >= 100 ? true : false}
         onClick={addPosition}
@@ -100,7 +109,7 @@ function App() {
       </div>
       <div>Market value: ${parseFloat(marketValue).toFixed(2)}</div>
       <div>Percent Allocated: {allocated}%</div>
-      <div>% Remaining: {100 - allocated}%</div>
+      <div>Percent Remaining: {100 - allocated}%</div>
     </div>
   );
 }
