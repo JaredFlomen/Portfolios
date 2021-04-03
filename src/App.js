@@ -1,15 +1,9 @@
-import { useEffect, useState } from 'react';
-// import Header from './components/Header';
-// import Position from './components/Position';
+import { useState } from 'react';
 import lastPrice from './helpers/lastPrice';
 import Button from 'react-bootstrap/Button';
 import Portfolio from './components/Portfolio';
 import { Col, Form, Row } from 'react-bootstrap';
 import './App.css';
-// import useVisualMode from './helpers/useVisualMode';
-
-// const SHOW = 'SHOW';
-// const EDIT = 'EDIT';
 
 function App() {
   const [ticker, setTicker] = useState('');
@@ -25,10 +19,6 @@ function App() {
     0
   );
 
-  // console.log({ marketValue });
-
-  // const marketValue = 1000;
-
   const allocated = portfolio.reduce(
     (accumulator, position) => accumulator + position.weight,
     0
@@ -39,8 +29,6 @@ function App() {
       portfolio.map(async position => {
         const price = await lastPrice(position.ticker);
         const shares = (marketValue * position.weight) / 100 / price;
-        // console.log({ price });
-        // console.log({ shares });
         if (!price) return { ...position, price: 'API Error' };
         return { ...position, price, shares: shares.toFixed(2) };
       })
@@ -64,12 +52,6 @@ function App() {
       setWeight('');
     }
   }
-
-  // const positions = portfolio.map((item, index) => {
-  //   return <Position key={index} item={item} />;
-  // });
-
-  // const { mode, transition, back } = useVisualMode(portfolio ? SHOW : EDIT);
 
   return (
     <div className='app'>
@@ -112,8 +94,6 @@ function App() {
         </Row>
       </Form.Group>
       <div>
-        {/* <Header /> */}
-        {/* {positions} */}
         <Portfolio portfolio={portfolio} />
       </div>
       <div>Market value: ${parseFloat(marketValue).toFixed(2)}</div>
