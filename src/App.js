@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // import Header from './components/Header';
 // import Position from './components/Position';
 import lastPrice from './helpers/lastPrice';
@@ -18,10 +18,14 @@ function App() {
     { ticker: 'SHOP', price: 1000.12, weight: 10, shares: 0.5 },
   ]);
 
-  const marketValue = portfolio.reduce(
-    (accumulator, position) => accumulator + position.price * position.shares,
-    0
-  );
+  // const testMarketValue = portfolio.reduce(
+  //   (accumulator, position) => accumulator + position.price * position.shares,
+  //   0
+  // );
+
+  // console.log({ testMarketValue });
+
+  const marketValue = 1000;
 
   const allocated = portfolio.reduce(
     (accumulator, position) => accumulator + position.weight,
