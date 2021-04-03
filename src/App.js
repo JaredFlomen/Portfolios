@@ -49,9 +49,10 @@ function App() {
       setWeight('');
       return null;
     } else {
+      const shares = (marketValue * weight) / 100 / price;
       setPortfolio([
         ...portfolio,
-        { ticker, price, weight: parseInt(weight), shares: 1 },
+        { ticker, price, weight: parseInt(weight), shares: shares.toFixed(2) },
       ]);
       setTicker('');
       setWeight('');
