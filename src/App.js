@@ -5,6 +5,7 @@ import lastPrice from './helpers/lastPrice';
 import Button from 'react-bootstrap/Button';
 import Portfolio from './components/Portfolio';
 import { Col, Form, Row } from 'react-bootstrap';
+import './App.css';
 // import useVisualMode from './helpers/useVisualMode';
 
 // const SHOW = 'SHOW';
@@ -71,7 +72,7 @@ function App() {
   // const { mode, transition, back } = useVisualMode(portfolio ? SHOW : EDIT);
 
   return (
-    <div>
+    <div className='test'>
       <Form.Group>
         <Row>
           <Col>
