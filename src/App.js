@@ -72,7 +72,7 @@ function App() {
   // const { mode, transition, back } = useVisualMode(portfolio ? SHOW : EDIT);
 
   return (
-    <div className='test'>
+    <div className='app'>
       <Form.Group>
         <Row>
           <Col>
