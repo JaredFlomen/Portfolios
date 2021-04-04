@@ -11,6 +11,7 @@ function Portfolio({ portfolio, deleteStock }) {
           <th>Price</th>
           <th>Weight</th>
           <th>Shares</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -21,13 +22,15 @@ function Portfolio({ portfolio, deleteStock }) {
               <td>{position.price}</td>
               <td>{position.weight}%</td>
               <td>
+                {position.shares} share{position.shares > 1 ? 's' : ''}
+              </td>
+              <td>
                 <Badge
-                  variant='primary'
+                  variant='danger'
                   onClick={() => deleteStock(position.ticker)}
                 >
-                  X
+                  Delete
                 </Badge>
-                {position.shares} share{position.shares > 1 ? 's' : ''}
               </td>
             </tr>
           );
