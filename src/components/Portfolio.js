@@ -1,6 +1,5 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
-// import Header from './Header';
+import Table from 'react-bootstrap/Table';
 
 function Portfolio({ portfolio }) {
   return (
