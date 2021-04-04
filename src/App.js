@@ -2,8 +2,9 @@ import { useState } from 'react';
 import lastPrice from './helpers/lastPrice';
 import Button from 'react-bootstrap/Button';
 import Portfolio from './components/Portfolio';
-import { Alert, Col, Form, Row } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 import './App.css';
+import Stats from './components/Stats';
 
 function App() {
   const [ticker, setTicker] = useState('');
@@ -93,18 +94,8 @@ function App() {
           </Col>
         </Row>
       </Form.Group>
-      <div>
-        <Portfolio portfolio={portfolio} />
-      </div>
-      <Alert variant='primary'>
-        Market value: <b>${parseFloat(marketValue).toFixed(2)}</b>
-      </Alert>
-      <Alert variant={allocated > 80 ? 'danger' : 'primary'}>
-        Percent Allocated: <b>{allocated}%</b>
-      </Alert>
-      <Alert variant={allocated > 80 ? 'danger' : 'primary'}>
-        Percent Remaining: <b>{100 - allocated}%</b>
-      </Alert>
+      <Portfolio portfolio={portfolio} />
+      <Stats marketValue={marketValue} allocated={allocated} />
     </div>
   );
 }
