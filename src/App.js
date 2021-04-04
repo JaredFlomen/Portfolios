@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import lastPrice from './helpers/lastPrice';
-import Button from 'react-bootstrap/Button';
 import Portfolio from './components/Portfolio';
+import Stats from './components/Stats';
+import Button from 'react-bootstrap/Button';
 import { Col, Form, Row } from 'react-bootstrap';
 import './App.css';
-import Stats from './components/Stats';
 
 function App() {
   const [ticker, setTicker] = useState('');
