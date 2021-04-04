@@ -2,7 +2,7 @@ import { useState } from 'react';
 import lastPrice from './helpers/lastPrice';
 import Button from 'react-bootstrap/Button';
 import Portfolio from './components/Portfolio';
-import { Col, Form, Row } from 'react-bootstrap';
+import { Alert, Col, Form, Row } from 'react-bootstrap';
 import './App.css';
 
 function App() {
@@ -96,9 +96,13 @@ function App() {
       <div>
         <Portfolio portfolio={portfolio} />
       </div>
-      <div>Market value: ${parseFloat(marketValue).toFixed(2)}</div>
-      <div>Percent Allocated: {allocated}%</div>
-      <div>Percent Remaining: {100 - allocated}%</div>
+      <Alert variant='primary'>
+        Market value: ${parseFloat(marketValue).toFixed(2)}
+      </Alert>
+      <Alert variant={allocated > 80 ? 'danger' : 'primary'}>
+        Percent Allocated: {allocated}%
+      </Alert>
+      <Alert variant='secondary'>Percent Remaining: {100 - allocated}%</Alert>
     </div>
   );
 }
