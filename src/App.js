@@ -97,7 +97,7 @@ function App() {
         <Portfolio portfolio={portfolio} />
       </div>
       <Alert variant='primary'>
-        Market value: ${parseFloat(marketValue).toFixed(2)}
+        Market value: <b>${parseFloat(marketValue).toFixed(2)}</b>
       </Alert>
       <Alert variant={allocated > 80 ? 'danger' : 'primary'}>
         Percent Allocated: <b>{allocated}%</b>
