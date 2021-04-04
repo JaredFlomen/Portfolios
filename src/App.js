@@ -100,10 +100,10 @@ function App() {
         Market value: ${parseFloat(marketValue).toFixed(2)}
       </Alert>
       <Alert variant={allocated > 80 ? 'danger' : 'primary'}>
-        Percent Allocated: {allocated}%
+        Percent Allocated: <b>{allocated}%</b>
       </Alert>
       <Alert variant={allocated > 80 ? 'danger' : 'primary'}>
-        Percent Remaining: {100 - allocated}%
+        Percent Remaining: <b>{100 - allocated}%</b>
       </Alert>
     </div>
   );
