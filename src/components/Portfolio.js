@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import Table from 'react-bootstrap/Table';
+import { Button, Table } from 'react-bootstrap';
 
 function Portfolio({ portfolio, deleteStock }) {
   return (
