@@ -54,6 +54,11 @@ function App() {
     }
   }
 
+  const deleteStock = ticker => {
+    const updatedPortfolio = portfolio.filter(x => x.ticker !== ticker);
+    setPortfolio(updatedPortfolio);
+  };
+
   return (
     <div className='app'>
       <Form.Group>
@@ -94,7 +99,7 @@ function App() {
           </Col>
         </Row>
       </Form.Group>
-      <Portfolio portfolio={portfolio} />
+      <Portfolio portfolio={portfolio} deleteStock={deleteStock} />
       <Stats marketValue={marketValue} allocated={allocated} />
     </div>
   );

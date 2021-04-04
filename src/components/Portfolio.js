@@ -1,7 +1,8 @@
 import React from 'react';
+import { Badge } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 
-function Portfolio({ portfolio }) {
+function Portfolio({ portfolio, deleteStock }) {
   return (
     <Table striped bordered hover>
       <thead>
@@ -20,6 +21,12 @@ function Portfolio({ portfolio }) {
               <td>{position.price}</td>
               <td>{position.weight}%</td>
               <td>
+                <Badge
+                  variant='primary'
+                  onClick={() => deleteStock(position.ticker)}
+                >
+                  X
+                </Badge>
                 {position.shares} share{position.shares > 1 ? 's' : ''}
               </td>
             </tr>
