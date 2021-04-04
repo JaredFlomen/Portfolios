@@ -102,7 +102,9 @@ function App() {
       <Alert variant={allocated > 80 ? 'danger' : 'primary'}>
         Percent Allocated: {allocated}%
       </Alert>
-      <Alert variant='secondary'>Percent Remaining: {100 - allocated}%</Alert>
+      <Alert variant={allocated > 80 ? 'danger' : 'primary'}>
+        Percent Remaining: {100 - allocated}%
+      </Alert>
     </div>
   );
 }
