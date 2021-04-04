@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 
 function Portfolio({ portfolio, deleteStock }) {
@@ -25,12 +25,12 @@ function Portfolio({ portfolio, deleteStock }) {
                 {position.shares} share{position.shares > 1 ? 's' : ''}
               </td>
               <td>
-                <Badge
+                <Button
                   variant='danger'
                   onClick={() => deleteStock(position.ticker)}
                 >
                   Delete
-                </Badge>
+                </Button>
               </td>
             </tr>
           );
