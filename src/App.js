@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   const [ticker, setTicker] = useState('');
   const [weight, setWeight] = useState('');
-  const [funds, setFunds] = useState(0);
+  const [funds, setFunds] = useState('');
   const [portfolio, setPortfolio] = useState([
     { ticker: 'AAPL', price: 122.15, weight: 100, shares: 1 },
     // { ticker: 'TSLA', price: 600.34, weight: 30, shares: 0.45 },
@@ -34,7 +34,7 @@ function App() {
         return { ...position, price, shares: shares.toFixed(2) };
       })
     ).then(res => setPortfolio(res));
-    setFunds(0);
+    setFunds('');
   };
 
   async function addPosition() {
