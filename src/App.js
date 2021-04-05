@@ -10,14 +10,14 @@ function App() {
   const [weight, setWeight] = useState('');
   const [funds, setFunds] = useState(0);
   const [portfolio, setPortfolio] = useState([
-    { ticker: 'AAPL', price: 112.15, weight: 50, shares: 4.09 },
-    { ticker: 'TSLA', price: 600.34, weight: 30, shares: 0.45 },
-    { ticker: 'SHOP', price: 1000.12, weight: 10, shares: 0.09 },
+    { ticker: 'AAPL', price: 122.15, weight: 100, shares: 1 },
+    // { ticker: 'TSLA', price: 600.34, weight: 30, shares: 0.45 },
+    // { ticker: 'SHOP', price: 1000.12, weight: 10, shares: 0.09 },
   ]);
 
   const marketValue = portfolio.reduce(
     (accumulator, position) => accumulator + position.price * position.shares,
-    funds
+    parseInt(funds) || 0
   );
 
   const allocated = portfolio.reduce(
@@ -108,7 +108,7 @@ function App() {
         type='number'
         placeholder='Add funds...'
         value={funds}
-        onChange={e => setFunds(parseInt(e.target.value))}
+        onChange={e => setFunds(e.target.value)}
       />
       <Button onClick={addFunds} vairant='primary'>
         Add Funds
