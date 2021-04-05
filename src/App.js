@@ -8,6 +8,7 @@ import './App.css';
 function App() {
   const [ticker, setTicker] = useState('');
   const [weight, setWeight] = useState('');
+  const [funds, setFunds] = useState(0);
   const [portfolio, setPortfolio] = useState([
     { ticker: 'AAPL', price: 112.15, weight: 50, shares: 4.09 },
     { ticker: 'TSLA', price: 600.34, weight: 30, shares: 0.45 },
@@ -16,7 +17,7 @@ function App() {
 
   const marketValue = portfolio.reduce(
     (accumulator, position) => accumulator + position.price * position.shares,
-    0
+    parseInt(funds)
   );
 
   const allocated = portfolio.reduce(
@@ -52,6 +53,10 @@ function App() {
       setWeight('');
     }
   }
+
+  const addFunds = () => {
+    return null;
+  };
 
   const deleteStock = ticker => {
     const updatedPortfolio = portfolio.filter(x => x.ticker !== ticker);
@@ -99,6 +104,15 @@ function App() {
         </Row>
       </Form.Group>
       <Portfolio portfolio={portfolio} deleteStock={deleteStock} />
+      <input
+        type='number'
+        placeholder='Add funds...'
+        value={funds}
+        onChange={e => setFunds(e.target.value)}
+      />
+      <Button onClick={addFunds} vairant='primary'>
+        Add Funds
+      </Button>
       <Stats marketValue={marketValue} allocated={allocated} />
     </div>
   );
