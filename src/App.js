@@ -100,7 +100,6 @@ function App() {
           </Col>
         </Row>
       </Form.Group>
-      <Portfolio portfolio={portfolio} deleteStock={deleteStock} />
       <Form.Group>
         <Row>
           <Col>
@@ -111,13 +110,14 @@ function App() {
               onChange={e => setFunds(e.target.value)}
             />
           </Col>
-          <Col>
+          <Col className='button'>
             <Button onClick={() => updatePortfolio()} vairant='primary'>
               Add Funds
             </Button>
           </Col>
         </Row>
       </Form.Group>
+      <Portfolio portfolio={portfolio} deleteStock={deleteStock} />
       <Stats marketValue={marketValue} allocated={allocated} />
     </div>
   );
