@@ -101,15 +101,23 @@ function App() {
         </Row>
       </Form.Group>
       <Portfolio portfolio={portfolio} deleteStock={deleteStock} />
-      <input
-        type='number'
-        placeholder='Add funds...'
-        value={funds}
-        onChange={e => setFunds(e.target.value)}
-      />
-      <Button onClick={() => updatePortfolio()} vairant='primary'>
-        Add Funds
-      </Button>
+      <Form.Group>
+        <Row>
+          <Col>
+            <Form.Control
+              type='number'
+              placeholder='Add funds...'
+              value={funds}
+              onChange={e => setFunds(e.target.value)}
+            />
+          </Col>
+          <Col>
+            <Button onClick={() => updatePortfolio()} vairant='primary'>
+              Add Funds
+            </Button>
+          </Col>
+        </Row>
+      </Form.Group>
       <Stats marketValue={marketValue} allocated={allocated} />
     </div>
   );
