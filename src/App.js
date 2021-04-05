@@ -34,6 +34,7 @@ function App() {
         return { ...position, price, shares: shares.toFixed(2) };
       })
     ).then(res => setPortfolio(res));
+    setFunds(0);
   };
 
   async function addPosition() {
