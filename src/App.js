@@ -10,9 +10,9 @@ function App() {
   const [weight, setWeight] = useState('');
   const [funds, setFunds] = useState('');
   const [portfolio, setPortfolio] = useState([
-    { ticker: 'AAPL', price: 122.15, weight: 100, shares: 1 },
-    // { ticker: 'TSLA', price: 600.34, weight: 30, shares: 0.45 },
-    // { ticker: 'SHOP', price: 1000.12, weight: 10, shares: 0.09 },
+    { ticker: 'AAPL', price: 122.15, weight: 50, shares: 1 },
+    { ticker: 'TSLA', price: 600.34, weight: 30, shares: 0.45 },
+    { ticker: 'SHOP', price: 1000.12, weight: 10, shares: 0.09 },
   ]);
 
   const marketValue = portfolio.reduce(
