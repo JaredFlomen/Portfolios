@@ -55,10 +55,6 @@ function App() {
     }
   }
 
-  const addFunds = () => {
-    return null;
-  };
-
   const deleteStock = ticker => {
     const updatedPortfolio = portfolio.filter(x => x.ticker !== ticker);
     setPortfolio(updatedPortfolio);
@@ -111,7 +107,7 @@ function App() {
         value={funds}
         onChange={e => setFunds(e.target.value)}
       />
-      <Button onClick={addFunds} vairant='primary'>
+      <Button onClick={() => updatePortfolio()} vairant='primary'>
         Add Funds
       </Button>
       <Stats marketValue={marketValue} allocated={allocated} />
