@@ -17,7 +17,7 @@ function App() {
 
   const marketValue = portfolio.reduce(
     (accumulator, position) => accumulator + position.price * position.shares,
-    parseInt(funds)
+    funds
   );
 
   const allocated = portfolio.reduce(
@@ -108,7 +108,7 @@ function App() {
         type='number'
         placeholder='Add funds...'
         value={funds}
-        onChange={e => setFunds(e.target.value)}
+        onChange={e => setFunds(parseInt(e.target.value))}
       />
       <Button onClick={addFunds} vairant='primary'>
         Add Funds
