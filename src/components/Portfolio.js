@@ -34,7 +34,7 @@ function Portfolio({ portfolio, deleteStock }) {
                 </Button>
               </td>
               <td>
-                <Button variant='primary'>Edit</Button>
+                <Button variant='secondary'>Edit</Button>
               </td>
             </tr>
           );
