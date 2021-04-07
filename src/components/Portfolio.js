@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
 
 function Portfolio({ portfolio, deleteStock }) {
+  const [edit, setEdit] = useState(false);
   return (
     <Table striped bordered hover>
       <thead>
@@ -11,6 +12,7 @@ function Portfolio({ portfolio, deleteStock }) {
           <th>Weight</th>
           <th>Shares</th>
           <th>Delete</th>
+          <th>Edit</th>
         </tr>
       </thead>
       <tbody>
@@ -30,6 +32,9 @@ function Portfolio({ portfolio, deleteStock }) {
                 >
                   Delete
                 </Button>
+              </td>
+              <td>
+                <Button variant='primary'>Edit</Button>
               </td>
             </tr>
           );
