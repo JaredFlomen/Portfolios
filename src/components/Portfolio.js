@@ -3,7 +3,8 @@ import { Button, Table } from 'react-bootstrap';
 
 function Portfolio({ portfolio, deleteStock }) {
   const [edit, setEdit] = useState(true);
-
+  const [newWeight, setNewWeight] = useState('');
+  console.log({ newWeight });
   return (
     <Table striped bordered hover>
       <thead>
@@ -28,8 +29,10 @@ function Portfolio({ portfolio, deleteStock }) {
                 <td>
                   <input
                     placeholder='Edit'
+                    type='text'
+                    pattern='[0-9]*'
                     defaultValue={position.weight}
-                    onChange={e => console.log(e.target.value)}
+                    onChange={e => setNewWeight(e.target.value)}
                   />
                 </td>
               )}
