@@ -4,7 +4,7 @@ import { Button, Table } from 'react-bootstrap';
 function Portfolio({ portfolio, deleteStock }) {
   const [edit, setEdit] = useState(true);
   const [newWeight, setNewWeight] = useState('');
-  console.log({ newWeight });
+  // console.log({ newWeight });
   return (
     <Table striped bordered hover>
       <thead>
