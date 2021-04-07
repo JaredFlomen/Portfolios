@@ -3,6 +3,7 @@ import { Button, Table } from 'react-bootstrap';
 
 function Portfolio({ portfolio, deleteStock }) {
   const [edit, setEdit] = useState(false);
+  console.log({ edit });
   return (
     <Table striped bordered hover>
       <thead>
@@ -34,7 +35,9 @@ function Portfolio({ portfolio, deleteStock }) {
                 </Button>
               </td>
               <td>
-                <Button variant='secondary'>Edit</Button>
+                <Button variant='secondary' onClick={() => setEdit(!edit)}>
+                  Edit
+                </Button>
               </td>
             </tr>
           );
