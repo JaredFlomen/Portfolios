@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
 
 function Portfolio({ portfolio, deleteStock }) {
-  const [edit, setEdit] = useState(false);
+  const [edit, setEdit] = useState(true);
 
   return (
     <Table striped bordered hover>
@@ -25,7 +25,9 @@ function Portfolio({ portfolio, deleteStock }) {
               {edit ? (
                 <td>{position.weight}%</td>
               ) : (
-                <input placeholder='Edit' />
+                <td>
+                  <input placeholder='Edit' defaultValue={position.weight} />
+                </td>
               )}
               <td>
                 {position.shares} share{position.shares > 1 ? 's' : ''}
