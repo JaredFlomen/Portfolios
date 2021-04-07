@@ -13,7 +13,7 @@ function Portfolio({ portfolio, deleteStock }) {
           <th>Weight</th>
           <th>Shares</th>
           <th>Delete</th>
-          <th>Edit</th>
+          <th>{edit ? 'Edit' : 'Save'}</th>
         </tr>
       </thead>
       <tbody>
@@ -42,7 +42,7 @@ function Portfolio({ portfolio, deleteStock }) {
               </td>
               <td>
                 <Button variant='secondary' onClick={() => setEdit(!edit)}>
-                  Edit
+                  {edit ? 'Edit' : 'Save'}
                 </Button>
               </td>
             </tr>
