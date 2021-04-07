@@ -3,7 +3,7 @@ import { Button, Table } from 'react-bootstrap';
 
 function Portfolio({ portfolio, deleteStock }) {
   const [edit, setEdit] = useState(false);
-  console.log({ edit });
+
   return (
     <Table striped bordered hover>
       <thead>
@@ -22,7 +22,11 @@ function Portfolio({ portfolio, deleteStock }) {
             <tr key={index}>
               <td>{position.ticker}</td>
               <td>{position.price}</td>
-              <td>{position.weight}%</td>
+              {edit ? (
+                <td>{position.weight}%</td>
+              ) : (
+                <input placeholder='Edit' />
+              )}
               <td>
                 {position.shares} share{position.shares > 1 ? 's' : ''}
               </td>
