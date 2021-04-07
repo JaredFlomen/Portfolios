@@ -26,7 +26,11 @@ function Portfolio({ portfolio, deleteStock }) {
                 <td>{position.weight}%</td>
               ) : (
                 <td>
-                  <input placeholder='Edit' defaultValue={position.weight} />
+                  <input
+                    placeholder='Edit'
+                    defaultValue={position.weight}
+                    onChange={e => console.log(e.target.value)}
+                  />
                 </td>
               )}
               <td>
