@@ -17,7 +17,13 @@ function Portfolio({ portfolio, deleteStock }) {
       </thead>
       <tbody>
         {portfolio.map((position, index) => {
-          return <Position position={position} index={index} />;
+          return (
+            <Position
+              position={position}
+              index={index}
+              deleteStock={deleteStock}
+            />
+          );
         })}
       </tbody>
     </Table>

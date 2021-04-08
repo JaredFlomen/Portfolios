@@ -1,10 +1,41 @@
 import React, { useState } from 'react';
 
-function Position() {
+function Position({ position, index }) {
   const [edit, setEdit] = useState(true);
   const [newWeight, setNewWeight] = useState('');
   // console.log({ newWeight });
-  return <div></div>;
+  return (
+    <tr key={index}>
+      <td>{position.ticker}</td>
+      <td>{position.price}</td>
+      {edit ? (
+        <td>{position.weight}%</td>
+      ) : (
+        <td>
+          <input
+            placeholder='Edit'
+            type='text'
+            pattern='[0-9]*'
+            defaultValue={position.weight}
+            onChange={e => setNewWeight(e.target.value)}
+          />
+        </td>
+      )}
+      <td>
+        {position.shares} share{position.shares > 1 ? 's' : ''}
+      </td>
+      <td>
+        <Button variant='danger' onClick={() => deleteStock(position.ticker)}>
+          Delete
+        </Button>
+      </td>
+      <td>
+        <Button variant='secondary' onClick={() => setEdit(!edit)}>
+          {edit ? 'Edit' : 'Save'}
+        </Button>
+      </td>
+    </tr>
+  );
 }
 
 export default Position;
