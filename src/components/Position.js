@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'react-bootstrap';
 
 function Position({ position, index, deleteStock }) {
   const [edit, setEdit] = useState(true);
