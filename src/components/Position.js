@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
-function Position({ position, index }) {
+function Position({ position, index, deleteStock }) {
   const [edit, setEdit] = useState(true);
   const [newWeight, setNewWeight] = useState('');
   // console.log({ newWeight });
