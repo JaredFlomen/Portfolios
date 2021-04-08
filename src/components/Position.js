@@ -34,7 +34,15 @@ function Position({ position, index, deleteStock }) {
         <Button
           variant='secondary'
           onClick={
-            edit ? () => console.log('here') : () => console.log('there')
+            edit
+              ? () => {
+                  console.log('here');
+                  setEdit(!edit);
+                }
+              : () => {
+                  console.log('there');
+                  setEdit(!edit);
+                }
           }
         >
           {edit ? 'Edit' : 'Save'}
