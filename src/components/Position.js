@@ -38,10 +38,12 @@ function Position({ position, index, deleteStock, updatePosition }) {
               ? () => {
                   setEdit(!edit);
                 }
-              : () => {
+              : newWeight
+              ? () => {
                   updatePosition(newWeight, position.ticker);
                   setEdit(!edit);
                 }
+              : () => setEdit(!edit)
           }
         >
           {edit ? 'Edit' : 'Save'}
