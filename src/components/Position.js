@@ -36,7 +36,6 @@ function Position({ position, index, deleteStock, updatePosition }) {
           onClick={
             edit
               ? () => {
-                  console.log('here');
                   setEdit(!edit);
                 }
               : () => {
