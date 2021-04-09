@@ -1,7 +1,7 @@
 import { Table } from 'react-bootstrap';
 import Position from './Position';
 
-function Portfolio({ portfolio, deleteStock }) {
+function Portfolio({ portfolio, deleteStock, updatePosition }) {
   return (
     <Table striped bordered hover>
       <thead>
@@ -21,6 +21,7 @@ function Portfolio({ portfolio, deleteStock }) {
               position={position}
               index={index}
               deleteStock={deleteStock}
+              updatePosition={updatePosition}
             />
           );
         })}
