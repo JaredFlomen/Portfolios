@@ -25,6 +25,15 @@ function App() {
     0
   );
 
+  const updatePosition = (newWeight, ticker) => {
+    const updatedPortfolio = portfolio.map(position => {
+      if (position.ticker === ticker) {
+        position.weight = newWeight;
+      }
+    });
+    setPortfolio(updatedPortfolio);
+  };
+
   const updatePortfolio = () => {
     Promise.all(
       portfolio.map(async position => {
