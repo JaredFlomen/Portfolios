@@ -19,7 +19,7 @@ function Portfolio({ portfolio, deleteStock, updatePosition }) {
           return (
             <Position
               position={position}
-              index={index}
+              key={index}
               deleteStock={deleteStock}
               updatePosition={updatePosition}
             />

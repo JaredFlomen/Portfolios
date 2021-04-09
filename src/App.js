@@ -28,7 +28,7 @@ function App() {
   const updatePosition = (newWeight, ticker) => {
     const updatedPortfolio = portfolio.map(position => {
       if (position.ticker === ticker) {
-        return { ...position, price: newWeight };
+        return { ...position, weight: parseInt(newWeight) };
       } else {
         return position;
       }
