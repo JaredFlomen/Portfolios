@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 
-function Position({ position, index, deleteStock }) {
+function Position({ position, index, deleteStock, updatePosition }) {
   const [edit, setEdit] = useState(true);
   const [newWeight, setNewWeight] = useState('');
   // console.log({ newWeight });
@@ -40,7 +40,7 @@ function Position({ position, index, deleteStock }) {
                   setEdit(!edit);
                 }
               : () => {
-                  console.log('there');
+                  updatePosition(newWeight, position.ticker);
                   setEdit(!edit);
                 }
           }
