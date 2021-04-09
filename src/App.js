@@ -28,7 +28,9 @@ function App() {
   const updatePosition = (newWeight, ticker) => {
     const updatedPortfolio = portfolio.map(position => {
       if (position.ticker === ticker) {
-        position.weight = newWeight;
+        return { ...position, price: newWeight };
+      } else {
+        return position;
       }
     });
     setPortfolio(updatedPortfolio);
@@ -126,7 +128,11 @@ function App() {
           </Col>
         </Row>
       </Form.Group>
-      <Portfolio portfolio={portfolio} deleteStock={deleteStock} />
+      <Portfolio
+        portfolio={portfolio}
+        deleteStock={deleteStock}
+        updatePosition={updatePosition}
+      />
       <Stats marketValue={marketValue} allocated={allocated} />
     </div>
   );
