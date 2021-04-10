@@ -1,5 +1,6 @@
-.wrapper {
+/* .wrapper {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -8,6 +9,8 @@
 .position {
   width: 100%;
   text-align: center;
-  justify-content: space-between;
-  /* background-color: red; */
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: red;
+} */
