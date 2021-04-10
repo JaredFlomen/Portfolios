@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import '../styles/position.css';
 
 function Position({ position, index, deleteStock, updatePosition }) {
   const [edit, setEdit] = useState(true);

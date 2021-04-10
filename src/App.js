@@ -3,7 +3,7 @@ import lastPrice from './helpers/lastPrice';
 import Portfolio from './components/Portfolio';
 import Stats from './components/Stats';
 import { Col, Form, Row, Button } from 'react-bootstrap';
-import './App.css';
+import './styles/App.css';
 
 function App() {
   const [ticker, setTicker] = useState('');
