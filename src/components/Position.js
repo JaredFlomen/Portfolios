@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 function Position({ position, index, deleteStock, updatePosition }) {
   const [edit, setEdit] = useState(true);
   const [newWeight, setNewWeight] = useState('');
-  // console.log({ newWeight });
+
   return (
     <tr key={index}>
       <td>{position.ticker}</td>
