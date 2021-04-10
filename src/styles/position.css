@@ -1,4 +1,4 @@
-/* .wrapper {
+.wrapper {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -8,9 +8,10 @@
 
 .position {
   width: 100%;
-  text-align: center;
+  /* text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; */
   justify-content: space-around;
+  /* padding: 12px; */
   background-color: red;
-} */
+}

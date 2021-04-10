@@ -15,8 +15,8 @@ function Position({ position, index, deleteStock, updatePosition }) {
       ) : (
         <td>
           <input
-            // className='position'
-            placeholder='Edit'
+            className='position'
+            // placeholder='Edit'
             type='text'
             pattern='[0-9]*'
             defaultValue={position.weight}
