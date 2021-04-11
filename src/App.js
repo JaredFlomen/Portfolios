@@ -2,10 +2,10 @@ import { useState } from 'react';
 import lastPrice from './helpers/lastPrice';
 import Portfolio from './components/Portfolio';
 import Stats from './components/Stats';
-import { Col, Form, Row, Button } from 'react-bootstrap';
-import './styles/App.css';
 import AddStock from './components/AddStock';
 import Actions from './components/Actions';
+import AddFunds from './components/AddFunds';
+import './styles/App.css';
 
 function App() {
   const [ticker, setTicker] = useState('');
@@ -86,23 +86,11 @@ function App() {
         addPosition={addPosition}
         updatePortfolio={updatePortfolio}
       />
-      <Form.Group>
-        <Row>
-          <Col>
-            <Form.Control
-              type='number'
-              placeholder='Add funds...'
-              value={funds}
-              onChange={e => setFunds(e.target.value)}
-            />
-          </Col>
-          <Col className='button'>
-            <Button onClick={() => updatePortfolio()} vairant='primary'>
-              Add Funds
-            </Button>
-          </Col>
-        </Row>
-      </Form.Group>
+      <AddFunds
+        funds={funds}
+        setFunds={setFunds}
+        updatePortfolio={updatePortfolio}
+      />
       <Portfolio
         portfolio={portfolio}
         deleteStock={deleteStock}
