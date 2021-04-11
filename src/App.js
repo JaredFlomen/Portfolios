@@ -4,6 +4,7 @@ import Portfolio from './components/Portfolio';
 import Stats from './components/Stats';
 import { Col, Form, Row, Button } from 'react-bootstrap';
 import './styles/App.css';
+import AddStock from './components/AddStock';
 
 function App() {
   const [ticker, setTicker] = useState('');
@@ -73,26 +74,12 @@ function App() {
 
   return (
     <div className='app'>
-      <Form.Group>
-        <Row>
-          <Col>
-            <Form.Control
-              type='text'
-              placeholder='Symbol'
-              value={ticker}
-              onChange={e => setTicker(e.target.value)}
-            />
-          </Col>
-          <Col>
-            <Form.Control
-              type='number'
-              placeholder='Portfolio Weight'
-              value={weight}
-              onChange={e => setWeight(e.target.value)}
-            />
-          </Col>
-        </Row>
-      </Form.Group>
+      <AddStock
+        setTicker={setTicker}
+        ticker={ticker}
+        weight={weight}
+        setWeight={setWeight}
+      />
       <Form.Group>
         <Row>
           <Col className='button'>
