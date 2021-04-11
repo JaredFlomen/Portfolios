@@ -5,6 +5,7 @@ import Stats from './components/Stats';
 import { Col, Form, Row, Button } from 'react-bootstrap';
 import './styles/App.css';
 import AddStock from './components/AddStock';
+import Actions from './components/Actions';
 
 function App() {
   const [ticker, setTicker] = useState('');
@@ -80,24 +81,11 @@ function App() {
         weight={weight}
         setWeight={setWeight}
       />
-      <Form.Group>
-        <Row>
-          <Col className='button'>
-            <Button
-              disabled={allocated >= 100 ? true : false}
-              onClick={addPosition}
-              variant={allocated >= 100 ? 'secondary' : 'primary'}
-            >
-              {allocated >= 100 ? 'Fully Allocated' : 'Add A Position'}
-            </Button>
-          </Col>
-          <Col className='button'>
-            <Button onClick={updatePortfolio} variant='primary'>
-              Update All Positions
-            </Button>
-          </Col>
-        </Row>
-      </Form.Group>
+      <Actions
+        allocated={allocated}
+        addPosition={addPosition}
+        updatePortfolio={updatePortfolio}
+      />
       <Form.Group>
         <Row>
           <Col>
