@@ -14,7 +14,7 @@ function App() {
   const [funds, setFunds] = useState('');
   const [trades, setTrades] = useState([]);
   const [portfolio, setPortfolio] = useState([
-    { ticker: 'AAPL', price: 122.15, weight: 50, shares: 1 },
+    { ticker: 'AAPL', price: 200, weight: 50, shares: 1 },
     { ticker: 'TSLA', price: 600.34, weight: 30, shares: 0.45 },
     { ticker: 'SHOP', price: 1000.12, weight: 10, shares: 0.09 },
   ]);
@@ -47,8 +47,8 @@ function App() {
         const price = await lastPrice(position.ticker);
         trades.push({
           ticker: position.ticker,
-          oldPrice: position.price,
-          newPrice: price,
+          oldPrice: parseInt(position.price),
+          newPrice: parseInt(price),
         });
         const shares = (marketValue * position.weight) / 100 / price;
         if (!price) return { ...position, price: 'API Error' };

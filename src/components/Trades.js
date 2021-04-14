@@ -6,6 +6,7 @@ function Trades({ trades }) {
       <p>Ticker: {position.ticker}</p>
       <p>Old price: {position.oldPrice}</p>
       <p>New price: {position.newPrice}</p>
+      <p>{position.newPrice > position.oldPrice ? 'Buy' : 'Sell'}</p>
     </div>
   ));
 }
