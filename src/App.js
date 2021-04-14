@@ -101,7 +101,7 @@ function App() {
         updatePosition={updatePosition}
       />
       <Stats marketValue={marketValue} allocated={allocated} />
-      {trades}
+      <p>{trades}</p>
     </div>
   );
 }
