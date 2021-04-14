@@ -50,6 +50,7 @@ function App() {
         return { ...position, price, shares: shares.toFixed(2) };
       })
     ).then(res => setPortfolio(res));
+    setTrades(trades);
     setFunds('');
   };
 
@@ -100,6 +101,7 @@ function App() {
         updatePosition={updatePosition}
       />
       <Stats marketValue={marketValue} allocated={allocated} />
+      {trades}
     </div>
   );
 }
