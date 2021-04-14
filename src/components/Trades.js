@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Trades({ trades }) {
   return trades.map((position, index) => (
     <div key={index}>
