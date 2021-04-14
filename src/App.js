@@ -11,6 +11,7 @@ function App() {
   const [ticker, setTicker] = useState('');
   const [weight, setWeight] = useState('');
   const [funds, setFunds] = useState('');
+  const [trades, setTrades] = useState([]);
   const [portfolio, setPortfolio] = useState([
     { ticker: 'AAPL', price: 122.15, weight: 50, shares: 1 },
     { ticker: 'TSLA', price: 600.34, weight: 30, shares: 0.45 },
@@ -39,9 +40,11 @@ function App() {
   };
 
   const updatePortfolio = () => {
+    const trades = [];
     Promise.all(
       portfolio.map(async position => {
         const price = await lastPrice(position.ticker);
+        trades.push([position.ticker, position.price, price]);
         const shares = (marketValue * position.weight) / 100 / price;
         if (!price) return { ...position, price: 'API Error' };
         return { ...position, price, shares: shares.toFixed(2) };
