@@ -6,6 +6,7 @@ import AddStock from './components/AddStock';
 import Actions from './components/Actions';
 import AddFunds from './components/AddFunds';
 import './styles/App.css';
+import Trades from './components/Trades';
 
 function App() {
   const [ticker, setTicker] = useState('');
@@ -101,7 +102,7 @@ function App() {
         updatePosition={updatePosition}
       />
       <Stats marketValue={marketValue} allocated={allocated} />
-      <p>{trades}</p>
+      <Trades trades={trades} />
     </div>
   );
 }
