@@ -1,11 +1,11 @@
 function Trades({ trades }) {
-  return trades.map((position, index) => (
+  return trades.map((trade, index) => (
     <div key={index}>
-      <p>Ticker: {position.ticker}</p>
+      <p>Ticker: {trade.ticker}</p>
       <p>
-        {position.newPrice > position.oldPrice
-          ? `Buy ${position.newShares - position.oldShares} shares`
-          : 'Sell'}
+        {trade.newShares > trade.oldShares
+          ? `Buy ${trade.newShares - trade.oldShares} shares`
+          : `Sell`}
       </p>
     </div>
   ));
