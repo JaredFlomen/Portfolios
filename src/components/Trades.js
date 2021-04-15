@@ -7,7 +7,7 @@ function Trades({ trades }) {
       <p>
         {trade.newShares > trade.oldShares
           ? `Buy ${(trade.newShares - trade.oldShares).toFixed(5)} shares`
-          : `Sell ${(trade.oldShares - trade.newShares).toFixed(5)}`}
+          : `Sell ${(trade.oldShares - trade.newShares).toFixed(5)} shares`}
       </p>
     </div>
   ));
