@@ -45,12 +45,12 @@ function App() {
     Promise.all(
       portfolio.map(async position => {
         const price = await lastPrice(position.ticker);
+        const shares = (marketValue * position.weight) / 100 / price;
         trades.push({
           ticker: position.ticker,
-          oldPrice: parseInt(position.price),
-          newPrice: parseInt(price),
+          oldShares: parseInt(position.shares),
+          newShares: parseInt(shares),
         });
-        const shares = (marketValue * position.weight) / 100 / price;
         if (!price) return { ...position, price: 'API Error' };
         return { ...position, price, shares: shares.toFixed(2) };
       })
