@@ -1,15 +1,19 @@
+import ListGroup from 'react-bootstrap/ListGroup';
+
 function Trades({ trades }) {
   return trades.map((trade, index) => (
-    <div key={index}>
-      <p>Ticker: {trade.ticker}</p>
-      <p>New: {trade.newShares}</p>
-      <p>Old: {trade.oldShares}</p>
-      <p>
+    <ListGroup variant='flush' key={index}>
+      <ListGroup.Item>
+        <b>Ticker: {trade.ticker}</b>
+      </ListGroup.Item>
+      <ListGroup.Item>New: {trade.newShares}</ListGroup.Item>
+      <ListGroup.Item>Old: {trade.oldShares}</ListGroup.Item>
+      <ListGroup.Item>
         {trade.newShares > trade.oldShares
           ? `Buy ${(trade.newShares - trade.oldShares).toFixed(5)} shares`
           : `Sell ${(trade.oldShares - trade.newShares).toFixed(5)} shares`}
-      </p>
-    </div>
+      </ListGroup.Item>
+    </ListGroup>
   ));
 }
 
