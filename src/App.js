@@ -48,8 +48,8 @@ function App() {
         const shares = (marketValue * position.weight) / 100 / price;
         trades.push({
           ticker: position.ticker,
-          oldShares: parseInt(position.shares),
-          newShares: parseInt(shares),
+          oldShares: parseInt(position.shares).toFixed(10),
+          newShares: shares,
         });
         if (!price) return { ...position, price: 'API Error' };
         return { ...position, price, shares: shares.toFixed(10) };
