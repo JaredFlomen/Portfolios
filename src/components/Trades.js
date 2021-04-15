@@ -6,8 +6,8 @@ function Trades({ trades }) {
       <p>Old: {trade.oldShares}</p>
       <p>
         {trade.newShares > trade.oldShares
-          ? `Buy ${trade.newShares - trade.oldShares} shares`
-          : `Sell ${trade.oldShares - trade.newShares}`}
+          ? `Buy ${(trade.newShares - trade.oldShares).toFixed(5)} shares`
+          : `Sell ${(trade.oldShares - trade.newShares).toFixed(5)}`}
       </p>
     </div>
   ));
