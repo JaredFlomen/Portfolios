@@ -5,9 +5,9 @@ import Stats from './components/Stats';
 import AddStock from './components/AddStock';
 import Actions from './components/Actions';
 import AddFunds from './components/AddFunds';
-import './styles/App.css';
 import Trades from './components/Trades';
 import Warning from './components/Warning';
+import './styles/App.css';
 
 function App() {
   const [ticker, setTicker] = useState('');
