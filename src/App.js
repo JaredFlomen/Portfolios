@@ -39,6 +39,7 @@ function App() {
       }
     });
     setPortfolio(updatedPortfolio);
+    setTrades([]);
   };
 
   const updatePortfolio = () => {
@@ -75,12 +76,14 @@ function App() {
       ]);
       setTicker('');
       setWeight('');
+      setTrades([]);
     }
   }
 
   const deleteStock = ticker => {
     const updatedPortfolio = portfolio.filter(x => x.ticker !== ticker);
     setPortfolio(updatedPortfolio);
+    setTrades([]);
   };
 
   return (
