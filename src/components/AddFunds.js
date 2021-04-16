@@ -13,7 +13,11 @@ function AddFunds({ funds, setFunds, updatePortfolio }) {
           />
         </Col>
         <Col className='button'>
-          <Button onClick={() => updatePortfolio()} vairant='primary'>
+          <Button
+            onClick={() => updatePortfolio()}
+            vairant='primary'
+            disabled={funds === '' ? true : false}
+          >
             Add Funds
           </Button>
         </Col>
