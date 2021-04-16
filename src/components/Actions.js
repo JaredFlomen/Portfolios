@@ -14,7 +14,11 @@ function Actions({ allocated, addPosition, updatePortfolio }) {
           </Button>
         </Col>
         <Col className='button'>
-          <Button onClick={updatePortfolio} variant='primary'>
+          <Button
+            onClick={updatePortfolio}
+            variant='primary'
+            disabled={allocated >= 100 ? true : false}
+          >
             Update All Positions
           </Button>
         </Col>
