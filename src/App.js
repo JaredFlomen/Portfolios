@@ -7,6 +7,7 @@ import Actions from './components/Actions';
 import AddFunds from './components/AddFunds';
 import './styles/App.css';
 import Trades from './components/Trades';
+import Warning from './components/Warning';
 
 function App() {
   const [ticker, setTicker] = useState('');
@@ -100,6 +101,7 @@ function App() {
         setFunds={setFunds}
         updatePortfolio={updatePortfolio}
       />
+      {allocated > 100 && <Warning />}
       <Portfolio
         portfolio={portfolio}
         deleteStock={deleteStock}
