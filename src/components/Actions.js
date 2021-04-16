@@ -17,7 +17,7 @@ function Actions({ allocated, addPosition, updatePortfolio }) {
           <Button
             onClick={updatePortfolio}
             variant='primary'
-            disabled={allocated >= 100 ? true : false}
+            disabled={allocated > 100 ? true : false}
           >
             Update All Positions
           </Button>
