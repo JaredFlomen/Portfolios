@@ -18,7 +18,9 @@ function AddFunds({ funds, setFunds, updatePortfolio }) {
             vairant='primary'
             disabled={!funds ? true : false}
           >
-            {!funds ? 'Funds must be positive' : 'Allocate the funds'}
+            {!funds
+              ? 'Funds must be positive'
+              : `Add $${funds} to the portfolio`}
           </Button>
         </Col>
       </Row>
