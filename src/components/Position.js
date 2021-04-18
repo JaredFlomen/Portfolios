@@ -7,7 +7,7 @@ function Position({ position, index, deleteStock, updatePosition }) {
   const [newWeight, setNewWeight] = useState('');
 
   return (
-    <tr key={index}>
+    <tr key={position.ticker}>
       <td>{position.ticker}</td>
       <td>{position.price}</td>
       {edit ? (
