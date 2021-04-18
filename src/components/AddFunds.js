@@ -16,7 +16,7 @@ function AddFunds({ funds, setFunds, updatePortfolio }) {
           <Button
             onClick={() => updatePortfolio()}
             vairant='primary'
-            disabled={funds === '' ? true : false}
+            disabled={!funds ? true : false}
           >
             {!funds ? 'Funds must be positive' : 'Allocate the funds'}
           </Button>
