@@ -2,7 +2,7 @@ import { Col, Form, Row } from 'react-bootstrap';
 
 function AddStock({ setTicker, ticker, weight, setWeight }) {
   return (
-    <Form.Group>
+    <Form.Group id='some-id'>
       <Row>
         <Col>
           <Form.Control

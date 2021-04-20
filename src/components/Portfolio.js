@@ -3,7 +3,7 @@ import Position from './Position';
 
 function Portfolio({ portfolio, deleteStock, updatePosition }) {
   return (
-    <Table striped bordered hover>
+    <Table striped bordered hover id='portfolio-scroll'>
       <thead>
         <tr>
           <th>Ticker</th>

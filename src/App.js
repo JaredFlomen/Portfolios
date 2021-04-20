@@ -85,7 +85,11 @@ function App() {
     setPortfolio(updatedPortfolio);
     setTrades([]);
   };
-
+  
+  function move() {
+    const anchor = document.querySelector('#portfolio-scroll');
+    anchor.scrollIntoView({behaviour: 'smooth', block: 'start'})
+  }
   return (
     <div className='app'>
       <AddStock
@@ -109,9 +113,10 @@ function App() {
         portfolio={portfolio}
         deleteStock={deleteStock}
         updatePosition={updatePosition}
-      />
+        />
       <Stats marketValue={marketValue} allocated={allocated} />
       <Trades trades={trades} />
+      <button onClick={move}>Stats</button>
     </div>
   );
 }
