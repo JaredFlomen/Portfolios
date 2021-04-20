@@ -90,6 +90,7 @@ function App() {
     const anchor = document.querySelector('#portfolio-scroll');
     anchor.scrollIntoView({behaviour: 'smooth', block: 'start'})
   }
+
   return (
     <div className='app'>
       <AddStock
